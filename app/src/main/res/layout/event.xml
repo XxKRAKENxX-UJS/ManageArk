@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:background="@drawable/event_sub_background"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/et_bt"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp">
+
+            </TextView>
+            <TextView
+                android:id="@+id/et_bt_t"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(8:00 AM - 9:30AM)"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="150dp">
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_bt_item_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aloo Paratha and Pickle"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGULAR ITEMS"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+            </TextView>
+
+            <ImageView
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="350dp"
+                android:layout_height="5dp"
+                android:src="@drawable/dotted"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_bt_item_regular"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fruit/Sprouts - Tea/Coffee/Milk">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="270dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available">
+
+            </TextView>
+            <CheckBox
+                android:id="@+id/et_bt_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </CheckBox>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:background="@drawable/event_sub_background"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/et_lunch"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp">
+
+            </TextView>
+            <TextView
+                android:id="@+id/et_lunch_t"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(12:00 PM - 2:00 PM)"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="150dp">
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_lunch_item_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rajma"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGULAR ITEMS"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+            </TextView>
+
+            <ImageView
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="350dp"
+                android:layout_height="5dp"
+                android:src="@drawable/dotted"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_lunch_item_regular"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rice - Dal - Pickle - Salad - Roti">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="270dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available">
+
+            </TextView>
+            <CheckBox
+                android:id="@+id/et_lunch_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </CheckBox>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:background="@drawable/event_sub_background"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/et_snack"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snack"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp">
+
+            </TextView>
+            <TextView
+                android:id="@+id/et_snack_t"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(5:00 PM - 6:00 PM)"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="150dp">
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_snack_item_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Noodles"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGULAR ITEMS"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+            </TextView>
+
+            <ImageView
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="350dp"
+                android:layout_height="5dp"
+                android:src="@drawable/dotted"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_snack_item_regular"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tea/Coffee/Milk">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="270dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available">
+
+            </TextView>
+            <CheckBox
+                android:id="@+id/et_snack_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </CheckBox>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:background="@drawable/event_sub_background"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/et_dinner"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp">
+
+            </TextView>
+            <TextView
+                android:id="@+id/et_dinner_t"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(8:00 PM - 10:00 PM)"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="150dp">
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_dinner_item_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gulab Jamun"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGULAR ITEMS"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+            </TextView>
+
+            <ImageView
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="350dp"
+                android:layout_height="5dp"
+                android:src="@drawable/dotted"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/et_dinner_item_regular"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rice - Dal - Pickle - Salad - Roti">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="270dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available">
+
+            </TextView>
+            <CheckBox
+                android:id="@+id/et_dinner_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </CheckBox>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
