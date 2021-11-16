@@ -6,8 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Home_Activity"
     android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="6dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/icon_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="8dp"
@@ -65,6 +96,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
         <androidx.cardview.widget.CardView
+            android:id="@+id/icon_profile"
             app:cardElevation="8dp"
             android:layout_weight="1"
             android:layout_width="50dp"
@@ -97,6 +129,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/icon_attendance"
             app:cardElevation="8dp"
             android:layout_weight="1"
             android:layout_width="50dp"
@@ -136,6 +169,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
         <androidx.cardview.widget.CardView
+            android:id="@+id/icon_complain"
             app:cardElevation="8dp"
             android:layout_weight="1"
             android:layout_width="50dp"
@@ -168,7 +202,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-
+            android:id="@+id/icon_ngo"
             app:cardElevation="8dp"
             android:layout_weight="1"
             android:layout_width="50dp"
