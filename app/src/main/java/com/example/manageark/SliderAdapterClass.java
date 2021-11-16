@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
@@ -27,6 +28,12 @@ public class SliderAdapterClass extends
     @Override
     public void onBindViewHolder(SliderAdapterClass.Holder viewHolder, int position) {
     viewHolder.imageView.setImageResource( images[position]);
+    viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(view.getContext(), "This is item in position " + position, Toast.LENGTH_SHORT).show();
+        }
+    });
     }
 
     @Override
@@ -39,6 +46,7 @@ public class SliderAdapterClass extends
         public Holder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.image_view);
+
         }
     }
 }
