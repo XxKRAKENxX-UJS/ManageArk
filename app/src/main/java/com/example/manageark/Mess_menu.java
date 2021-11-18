@@ -1,48 +1,93 @@
 package com.example.manageark;
 
+import static com.example.manageark.CalendarUtils.daysInWeekArray;
+import static com.example.manageark.CalendarUtils.monthYearFromDate;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
 
-import devs.mulham.horizontalcalendar.HorizontalCalendar;
-import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
-public class Mess_menu extends AppCompatActivity {
 
+public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnItemListener {
+
+    private TextView monthYearText;
+    private RecyclerView calendarRecyclerView;
+    private TextView bt_item;
     private final String TAG = "MAIN Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mess_menu);
-//
-        CalenderUtil calenderUtil = new CalenderUtil();
-        Log.d(TAG, String.valueOf(calenderUtil.startDate));
+        CalendarUtils.selectedDate = LocalDate.now();
+        initWidgets();
+        setWeekView();
+    }
 
-        // on below line we are setting up our horizontal calendar view and passing id our calendar view to it.
-        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
-                // on below line we are adding a range
-                // as start date and end date to our calendar.
-                .range(calenderUtil.startDate, calenderUtil.endDate)
-                // on below line we are providing a number of dates
-                // which will be visible on the screen at a time.
-                .datesNumberOnScreen(7)
-                // at last we are calling a build method
-                // to build our horizontal recycler view.
-                .build();
-        // on below line we are setting calendar listener to our calendar view.
-        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
-            @Override
-            public void onDateSelected(Calendar date, int position) {
-                // on below line we are printing date
-                // in the logcat which is selected.
-                Log.e("TAG", "CURRENT DATE IS " + position);
-                Log.d("Tag", String.valueOf(date.get(Calendar.DATE)));
-            }
-        });
+    private void initWidgets()
+    {
+        calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
+        monthYearText = findViewById(R.id.monthYearTV);
 
+        bt_item = findViewById(R.id.et_bt_item_special);
+    }
+
+    private void setWeekView()
+    {
+        monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
+        ArrayList<LocalDate> days = daysInWeekArray(CalendarUtils.selectedDate);
+
+        CalendarAdapter calendarAdapter = new CalendarAdapter(days, this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+        calendarRecyclerView.setLayoutManager(layoutManager);
+        calendarRecyclerView.setAdapter(calendarAdapter);
+    }
+
+
+    public void previousWeekAction(View view)
+    {
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
+        setWeekView();
+    }
+    public void nextWeekAction(View view)
+    {
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
+        setWeekView();
+    }
+
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+    }
+
+    @Override
+    public void onItemClick(int position, LocalDate date) {
+        CalendarUtils.selectedDate = date;
+        setWeekView();
+        Log.d("TT", String.valueOf(position));
+        if(date.toString().equals("2021-12-01")){
+            bt_item.setText("ho gaya");
+        }
+
+        if(date.toString().equals("2021-12-02")){
+            bt_item.setText("fir se gaya");
+        }
+
+        if(date.toString().equals("2021-12-03")){
+            bt_item.setText("hoooooooooo gaya");
+        }
     }
 }

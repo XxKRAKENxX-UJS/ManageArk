@@ -1,50 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mess_menu"
-    android:orientation="vertical">
+    tools:context=".Mess_menu">
+
     <LinearLayout
-        android:background="@drawable/announcement_background"
-        android:layout_width="wrap_content"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="50dp">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/announcement">
-        </ImageView>
-
-        <TextView
-            android:layout_gravity="center"
+        <LinearLayout
+            android:background="@drawable/announcement_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu changed on 15 Aug"
-            android:layout_marginStart="10dp">
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="50dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/announcement">
 
-        </TextView>
+            </ImageView>
+
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu changed on 15 Aug"
+                android:layout_marginStart="10dp">
+
+            </TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="previousWeekAction"
+                android:text="@string/back"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/monthYearTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Feb 2021"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="nextWeekAction"
+                android:text="@string/forward"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="SUN"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="MON"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="TUE"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="WED"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="THU"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="FRI"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="SAT"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:textSize="16sp" />-->
+
+
+<!--        </LinearLayout>-->
+
+        <ListView
+            android:id="@+id/eventListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calendarRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_weight="1" />
+
+        <include
+            layout="@layout/event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
-    <devs.mulham.horizontalcalendar.HorizontalCalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:selectorColor="@android:color/holo_red_dark"
-        app:textColorNormal="@color/purple_200"
-        app:textColorSelected="@color/purple_200" />
-
-    <include
-        layout="@layout/event"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+</ScrollView>
 
 
-</LinearLayout>
+    <!--</LinearLayout>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
