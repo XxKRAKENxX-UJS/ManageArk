@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement.xml" value="0.103125" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement_background.xml" value="0.1" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/dotted.xml" value="0.1" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/event.xml" value="0.13518518518518519" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/event_sub_background.xml" value="0.13518518518518519" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/menu_home_background.xml" value="0.21770833333333334" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_home.xml" value="0.72" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_home.xml" value="0.27413793103448275" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_menu.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_mess_menu.xml" value="0.19739583333333333" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/event.xml" value="0.196875" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/image_slider_layout_item.xml" value="0.1" />
       </map>
