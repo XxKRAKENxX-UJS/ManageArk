@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:text="(8:00 AM - 9:30AM)"
                     android:layout_marginTop="5dp"
-                    android:layout_marginStart="150dp">
+                    android:layout_marginStart="120dp">
                 </TextView>
 
 
