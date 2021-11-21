@@ -2,229 +2,240 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:background="@drawable/event"
-        android:padding="2dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp">
-
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
         <LinearLayout
-            android:background="@drawable/event_sub_background"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:textStyle="bold"
-                android:id="@+id/et_bt"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Breakfast"
+            android:layout_height="160dp"
+            android:orientation="vertical"
+            android:background="@drawable/event"
+            android:padding="2dp">
 
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp">
+            <LinearLayout
+                android:background="@drawable/event_sub_background"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/et_bt"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Breakfast"
 
-            </TextView>
-            <TextView
-                android:id="@+id/et_bt_t"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(8:00 AM - 9:30AM)"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="150dp">
-            </TextView>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/et_bt_t"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(8:00 AM - 9:30AM)"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="150dp">
+                </TextView>
 
 
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/et_bt_item_special"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aloo Paratha and Pickle"
-
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp">
-        </TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/et_bt_item_special"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAR ITEMS"
-                android:textStyle="bold"
+                android:text="Aloo Paratha and Pickle"
+
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp">
             </TextView>
 
-            <ImageView
-                android:layout_marginTop="18dp"
-                android:layout_marginStart="5dp"
-                android:layout_width="350dp"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layerType="software" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/et_bt_item_regular"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fruit/Sprouts - Tea/Coffee/Milk">
-        </TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="270dp">
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available">
+                android:orientation="horizontal">
 
-            </TextView>
-            <CheckBox
-                android:id="@+id/et_bt_avail"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR ITEMS"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+                </TextView>
+
+                <ImageView
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="350dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/dotted"
+                    android:layerType="software" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/et_bt_item_regular"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </CheckBox>
+                android:layout_height="wrap_content"
+                android:text="Fruit/Sprouts - Tea/Coffee/Milk">
+            </TextView>
+
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/et_bt_switch"
+                android:layout_width="95dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="end"
+                android:paddingBottom="100dp"
+                android:textSize="14sp"
+                app:colorBorder="#E91E63"
+                app:on="true"
+                app:textOff="NOT ATT "
+                app:textOn="ATT " />
+
+
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:background="@drawable/event"
-        android:padding="2dp"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp">
-
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
         <LinearLayout
-            android:background="@drawable/event_sub_background"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:textStyle="bold"
-                android:id="@+id/et_lunch"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lunch"
+            android:layout_height="160dp"
+            android:orientation="vertical"
+            android:background="@drawable/event"
+            android:padding="2dp">
 
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp">
+            <LinearLayout
+                android:background="@drawable/event_sub_background"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/et_lunch"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch"
 
-            </TextView>
-            <TextView
-                android:id="@+id/et_lunch_t"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(12:00 PM - 2:00 PM)"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="150dp">
-            </TextView>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/et_lunch_t"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(12:00 PM - 2:00 PM)"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="150dp">
+                </TextView>
 
 
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/et_lunch_item_special"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rajma"
-
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp">
-        </TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/et_lunch_item_special"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAR ITEMS"
-                android:textStyle="bold"
+                android:text="Rajma"
+
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp">
             </TextView>
 
-            <ImageView
-                android:layout_marginTop="18dp"
-                android:layout_marginStart="5dp"
-                android:layout_width="350dp"
-                android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layerType="software" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/et_lunch_item_regular"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rice - Dal - Pickle - Salad - Roti">
-        </TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="270dp">
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available">
+                android:orientation="horizontal">
 
-            </TextView>
-            <CheckBox
-                android:id="@+id/et_lunch_avail"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR ITEMS"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+                </TextView>
+
+                <ImageView
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="350dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/dotted"
+                    android:layerType="software" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/et_lunch_item_regular"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </CheckBox>
+                android:layout_height="wrap_content"
+                android:text="Rice - Dal - Pickle - Salad - Roti">
+            </TextView>
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/et_lunch_switch"
+                android:layout_width="95dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="end"
+                android:paddingBottom="100dp"
+                android:textSize="14sp"
+                app:colorBorder="#E91E63"
+                app:on="true"
+                app:textOff="NOT ATT "
+                app:textOn="ATT " />
+
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:background="@drawable/event"
-        android:padding="2dp"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp">
 
         <LinearLayout
             android:background="@drawable/event_sub_background"
@@ -301,37 +312,37 @@
             android:text="Tea/Coffee/Milk">
         </TextView>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+        <com.github.angads25.toggle.LabeledSwitch
+            android:id="@+id/et_snack_switch"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="270dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Available">
-
-            </TextView>
-            <CheckBox
-                android:id="@+id/et_snack_avail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </CheckBox>
-        </LinearLayout>
+            android:layout_gravity="end"
+            android:paddingBottom="100dp"
+            android:textSize="14sp"
+            app:colorBorder="#E91E63"
+            app:on="true"
+            app:textOff="NOT ATT "
+            app:textOn="ATT " />
 
     </LinearLayout>
+</androidx.cardview.widget.CardView>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:background="@drawable/event"
-        android:padding="2dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@drawable/event"
+        android:padding="2dp">
 
         <LinearLayout
             android:background="@drawable/event_sub_background"
@@ -407,28 +418,21 @@
             android:layout_height="wrap_content"
             android:text="Rice - Dal - Pickle - Salad - Roti">
         </TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+        <com.github.angads25.toggle.LabeledSwitch
+            android:id="@+id/et_dinner_switch"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="270dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Available">
-
-            </TextView>
-            <CheckBox
-                android:id="@+id/et_dinner_avail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </CheckBox>
-        </LinearLayout>
+            android:layout_gravity="end"
+            android:paddingBottom="100dp"
+            android:textSize="14sp"
+            app:colorBorder="#E91E63"
+            app:on="true"
+            app:textOff="NOT ATT "
+            app:textOn="ATT " />
 
     </LinearLayout>
-
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>
