@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ManageArk">
         <activity
+            android:name=".LoginMain"
+            android:exported="false" />
+        <activity
             android:name=".Mess_menu"
             android:exported="true" />
         <activity
