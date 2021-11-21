@@ -104,6 +104,7 @@
                 android:paddingBottom="100dp"
                 android:textSize="14sp"
                 app:colorBorder="#E91E63"
+                app:colorOn="#00C4A6"
                 app:on="true"
                 app:textOff="NOT ATT "
                 app:textOn="ATT " />
@@ -212,6 +213,7 @@
                 android:layout_gravity="end"
                 android:paddingBottom="100dp"
                 android:textSize="14sp"
+                app:colorOn="#00C4A6"
                 app:colorBorder="#E91E63"
                 app:on="true"
                 app:textOff="NOT ATT "
@@ -321,6 +323,7 @@
             android:paddingBottom="100dp"
             android:textSize="14sp"
             app:colorBorder="#E91E63"
+            app:colorOn="#00C4A6"
             app:on="true"
             app:textOff="NOT ATT "
             app:textOn="ATT " />
@@ -427,7 +430,10 @@
             android:paddingBottom="100dp"
             android:textSize="14sp"
             app:colorBorder="#E91E63"
+            app:colorOn="#00C4A6"
+
             app:on="true"
+
             app:textOff="NOT ATT "
             app:textOn="ATT " />
 
