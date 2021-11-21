@@ -7,11 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.angads25.toggle.LabeledSwitch;
+import com.github.angads25.toggle.interfaces.OnToggledListener;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,8 +37,45 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
+
+
+
+
+
+
+
     }
 
+    private  void SettingAttend(){
+
+        //        hooks
+        LabeledSwitch Switch_bt = findViewById(R.id.et_bt_switch);
+        LabeledSwitch Switch_lunch = findViewById(R.id.et_lunch_switch);
+        LabeledSwitch Switch_snack = findViewById(R.id.et_snack_switch);
+        LabeledSwitch Switch_dinner = findViewById(R.id.et_dinner_switch);
+
+        //       breakfast
+        Switch_bt.setOnToggledListener(new OnToggledListener() {
+            @Override
+            public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
+                if(isOn){
+                    labeledSwitch.setColorOn(Color.parseColor("#00C4A6"));
+
+                    Toast.makeText(getApplicationContext(),"Marked Attending",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    labeledSwitch.setColorOn(Color.parseColor("#FF4081"));
+                    Toast.makeText(getApplicationContext(),"Marked Not-Attending",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+
+
+
+    }
     private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
@@ -51,6 +92,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         CalendarAdapter calendarAdapter = new CalendarAdapter(days, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
+        layoutManager.smoothScrollToPosition(calendarRecyclerView, null, 0);
         calendarRecyclerView.setAdapter(calendarAdapter);
     }
 
