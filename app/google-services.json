@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "668940212249",
+    "project_id": "manageark-e1ce6",
+    "storage_bucket": "manageark-e1ce6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668940212249:android:5a55fb8b4b00d78fd2b288",
+        "android_client_info": {
+          "package_name": "com.example.manageark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668940212249-j92efcruhud7pt67fmt0unds1upbcgnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLZSb-3NjdYC_djeh5VY59VXecaKQu1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668940212249-j92efcruhud7pt67fmt0unds1upbcgnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

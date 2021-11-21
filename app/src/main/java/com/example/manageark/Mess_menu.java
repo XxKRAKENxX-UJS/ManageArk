@@ -37,7 +37,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         CalendarUtils.selectedDate = LocalDate.now();
         initWidgets();
         setWeekView();
-
+        SettingAttend();
 
 
 
