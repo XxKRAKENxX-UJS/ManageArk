@@ -44,7 +44,6 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:text="Menu changed on 15 Aug">
-
                 </TextView>
         </LinearLayout>
         </androidx.cardview.widget.CardView>
