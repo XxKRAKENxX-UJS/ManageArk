@@ -33,7 +33,7 @@ public class userUtilsStore {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         message[0] = new firebaseMessage(
-                                Status.Unsuccessful, "Something went wrong."
+                                Status.Unsuccessful, "Something went wrong.", "Error while creating document"
                         );
                     }
                 });

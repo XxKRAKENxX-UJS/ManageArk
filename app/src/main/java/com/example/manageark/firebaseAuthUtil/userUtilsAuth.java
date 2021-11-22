@@ -1,5 +1,7 @@
 package com.example.manageark.firebaseAuthUtil;
 
+import android.os.AsyncTask;
+
 import androidx.annotation.NonNull;
 
 import com.example.manageark.ENUMS.Status;
@@ -46,7 +48,7 @@ public class userUtilsAuth {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         firebaseMessage[0] =  new firebaseMessage(
-                                Status.Unsuccessful, "Something went wrong."
+                                Status.Unsuccessful, "Something went wrong.", "Error while creating user."
                         );
                     }
                 });
@@ -57,18 +59,22 @@ public class userUtilsAuth {
     // ---------------------------
     // Login user
     public firebaseMessage Login(String email, String password) {
-        firebaseMessage[] message = new firebaseMessage[1];
+        firebaseMessage[] message = {
+                new firebaseMessage(com.example.manageark.ENUMS.Status.Unsuccessful, "Something went wrong")
+        };
+
+        System.out.println(email + "\t "  +password);
         auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        message[0] = new firebaseMessage(Status.Successful, "Logged in.");
+                        message[0] = new firebaseMessage(Status.Successful, "Logged in.", "Logged in successfully");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        message[0] = new firebaseMessage(Status.Unsuccessful, "Something went wrong.");
+                        message[0] = new firebaseMessage(Status.Unsuccessful, "Something went wrong.", "Error while login.");
                     }
                 });
         return message[0];

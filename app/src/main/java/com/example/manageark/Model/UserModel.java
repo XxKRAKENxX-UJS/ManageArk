@@ -54,4 +54,16 @@ public class UserModel {
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
+
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "uid='" + uid + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", uniqueId='" + uniqueId + '\'' +
+                ", university='" + university + '\'' +
+                ", photoUrl='" + photoUrl + '\'' +
+                '}';
+    }
 }
