@@ -3,20 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement.xml" value="0.103125" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement_background.xml" value="0.1" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/dotted.xml" value="0.1" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/event.xml" value="0.13518518518518519" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/event_sub_background.xml" value="0.13518518518518519" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
-        <entry key="..\:/AndriodProject/app/src/main/res/drawable/menu_home_background.xml" value="0.21770833333333334" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_login_main.xml" value="0.19739583333333333" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_menu.xml" value="0.19739583333333333" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_mess_menu.xml" value="0.24173553719008264" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/calendar_cell.xml" value="0.264" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/event.xml" value="0.4" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/image_slider_layout_item.xml" value="0.1" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_home.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_login_main.xml" value="0.22" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_mess_menu.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/event.xml" value="0.33" />
       </map>
     </option>
   </component>
@@ -25,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.20104166666666667" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -12,19 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ManageArk">
         <activity
+            android:name=".register"
+            android:exported="true" />
+
+        <activity
             android:name=".LoginMain"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Mess_menu"
             android:exported="true" />
         <activity
             android:name=".Home_Activity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
