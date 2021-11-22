@@ -67,6 +67,22 @@ public class register extends AppCompatActivity {
                 EmailLayout.setError(null);
             }
         });
+        Password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                PasswordLayout.setError(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                PasswordLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                PasswordLayout.setError(null);
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +91,7 @@ public class register extends AppCompatActivity {
 
                 if(email.isEmpty()){
                     EmailLayout.requestFocus();
-                    EmailLayout.setError("Please enter your name");
+                    EmailLayout.setError("Please enter your Email");
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -90,7 +106,7 @@ public class register extends AppCompatActivity {
                 }
                 if(password.length()<8) {
                     PasswordLayout.requestFocus();
-                    PasswordLayout.setError("Please enter your name");
+                    PasswordLayout.setError("Password must be more than 8 characters");
                     return;
                 }
                 PerForAuth();

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +51,38 @@ public class LoginMain extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        Email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                EmailLayout.setError(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                EmailLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                EmailLayout.setError(null);
+            }
+        });
+        Password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                PasswordLayout.setError(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                PasswordLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                PasswordLayout.setError(null);
+            }
+        });
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +90,7 @@ public class LoginMain extends AppCompatActivity {
                 String password = Password.getText().toString();
                 if(email.isEmpty()){
                     EmailLayout.requestFocus();
-                    EmailLayout.setError("Please enter your name");
+                    EmailLayout.setError("Please enter your Email");
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
