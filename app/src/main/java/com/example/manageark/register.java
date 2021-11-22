@@ -46,7 +46,6 @@ public class register extends AppCompatActivity {
                 PerForAuth(Name,Email,Password);
             }
         });
-
     }
 
     private void PerForAuth(TextView name, TextView email, TextView password) {
