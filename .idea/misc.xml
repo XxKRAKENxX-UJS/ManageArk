@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_home.xml" value="0.20104166666666667" />
-        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_login_main.xml" value="0.22" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_login_main.xml" value="0.33" />
         <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_mess_menu.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/activity_register_details.xml" value="0.33" />
         <entry key="..\:/Users/2001u/AndroidStudioProjects/ManageArk/app/src/main/res/layout/event.xml" value="0.33" />
       </map>
     </option>
