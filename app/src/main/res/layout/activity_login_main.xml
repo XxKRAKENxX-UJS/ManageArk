@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".LoginMain">
 
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:text="ManageARK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
