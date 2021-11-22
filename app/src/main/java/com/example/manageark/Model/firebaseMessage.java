@@ -10,6 +10,7 @@ public class firebaseMessage {
     public firebaseMessage(Status status, String message) {
         this.message = message;
         this.status = status;
+        this.otherInfo = "NA";
     }
 
     public firebaseMessage(Status status, String message, String otherInfo) {
