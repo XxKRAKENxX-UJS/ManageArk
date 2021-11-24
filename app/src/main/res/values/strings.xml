@@ -5,4 +5,7 @@
     <string name="MANAGEARK">ManageARK</string>
 
 
+    <string name="forget_password">FORGET \nPASSWORD</string>
+    <string name="forget_password_details">ENTER EMAIL ASSOSIATED WITH REGISTERED ACCOUNT</string>
+
 </resources>

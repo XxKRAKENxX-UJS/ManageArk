@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.w3c.dom.Text;
 
 public class LoginMain extends AppCompatActivity {
-    TextView Email,Password,Signup;
+    TextView Email,Password,Signup,forgetpass;
     TextInputLayout EmailLayout, PasswordLayout;
     Button Login;
     FirebaseAuth mAuth;
@@ -44,6 +44,14 @@ public class LoginMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SwitchToRegister();
+            }
+        });
+        forgetpass = findViewById(R.id.forget_pass);
+        forgetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginMain.this,Forgetpass.class);
+                startActivity(intent);
             }
         });
 
