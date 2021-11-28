@@ -98,9 +98,34 @@
             android:inputType="text"
             android:maxLength="20"
             android:maxLines="1"
-            android:paddingLeft="12dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
+
+            android:paddingLeft="12dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/RegisterDetails_mess_id_TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="50dp"
+
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/Red"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="50dp"
+        android:hint="Mess ID ">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/RegisterDetails_mess_id_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/RegisterDetails_signup_bt"
         android:layout_width="match_parent"

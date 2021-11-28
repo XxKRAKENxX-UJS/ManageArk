@@ -36,6 +36,7 @@ public class userUtilsAuth {
                             assert user != null;
                             String uid = user.getUid();
                             userModel.setUID(uid);
+                            userModel.setPhotoUrl("profilepic/"+uid+".png");
 
                             userUtilsStore userUtilsStore = new userUtilsStore();
                             firebaseMessage message = userUtilsStore.postSignup(userModel);

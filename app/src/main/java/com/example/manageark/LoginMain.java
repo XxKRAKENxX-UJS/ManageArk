@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,12 +15,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.manageark.ENUMS.Status;
+import com.example.manageark.Model.firebaseMessage;
+import com.example.manageark.firebaseAuthUtil.userUtilsAuth;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
 
@@ -27,19 +34,25 @@ public class LoginMain extends AppCompatActivity {
     TextView Email,Password,Signup;
     TextInputLayout EmailLayout, PasswordLayout;
     Button Login;
-    FirebaseAuth mAuth;
-    FirebaseUser mUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login_main);
-         Email = (TextView)findViewById(R.id.user_email_EditText);
-         EmailLayout = (TextInputLayout) findViewById(R.id.user_email_TextInputLayout);
+
+        // hooks
+        Email = (TextView)findViewById(R.id.user_email_EditText);
+        EmailLayout = (TextInputLayout) findViewById(R.id.user_email_TextInputLayout);
 
         Password = (TextView)findViewById(R.id.user_password_EditText);
         PasswordLayout = (TextInputLayout) findViewById(R.id.user_password_TextInputLayout);
 
         Signup = (TextView)findViewById(R.id.Signup_Login);
+
+        Login = findViewById(R.id.user_login_bt);
+
+        // sign up button click
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,10 +60,7 @@ public class LoginMain extends AppCompatActivity {
             }
         });
 
-        Login = findViewById(R.id.user_login_bt);
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
-
+        // added text changed to remove set error of layout
         Email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -67,6 +77,7 @@ public class LoginMain extends AppCompatActivity {
                 EmailLayout.setError(null);
             }
         });
+
         Password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -83,6 +94,8 @@ public class LoginMain extends AppCompatActivity {
                 PasswordLayout.setError(null);
             }
         });
+
+        // login button click
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,24 +116,10 @@ public class LoginMain extends AppCompatActivity {
                     PasswordLayout.setError("Please enter your password");
                     return;
                 }
-                DoLogin();
-            }
-        });
+                Login(email,password);
 
-    }
 
-    private void DoLogin() {
 
-        String email = Email.getText().toString();
-        String password = Password.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
-
-                }
             }
         });
 
@@ -131,4 +130,33 @@ public class LoginMain extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+
+    private void Login(String email, String password) {
+        firebaseMessage[] message = {
+                new firebaseMessage(com.example.manageark.ENUMS.Status.Unsuccessful, "Something went wrong")
+        };
+
+        System.out.println(email + "\t " + password);
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        message[0] = new firebaseMessage(Status.Successful, "Logged in.", "Logged in successfully");
+                        if (authResult.getUser() != null) {
+                            Intent intent = new Intent(LoginMain.this,Home_Activity.class);
+                            startActivity(intent);
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        message[0] = new firebaseMessage(Status.Unsuccessful, "Something went wrong.", "Error while login.");
+                    }
+                });
+
+    }
 }

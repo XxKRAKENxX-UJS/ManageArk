@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.manageark.firebaseAuthUtil.userUtilsAuth;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,14 +26,16 @@ public class register extends AppCompatActivity {
     TextView Email,Password,login;
     TextInputLayout EmailLayout,PasswordLayout;
     Button next;
-    FirebaseAuth mAuth;
-    FirebaseUser mUser;
+
+    //object of firebaseAuthUtil
+    userUtilsAuth auth = new userUtilsAuth();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
+        //hooks
         Email = findViewById(R.id.signup_email_EditText);
         EmailLayout =findViewById(R.id.signup_email_TextInputLayout);
 
@@ -42,15 +45,16 @@ public class register extends AppCompatActivity {
         next = findViewById(R.id.user_next_bt);
         login = findViewById(R.id.txt_login);
 
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
 
+        // login button on click
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SwitchToLogin();
             }
         });
+
+        // added text changed to remove set error of layout
         Email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -67,6 +71,7 @@ public class register extends AppCompatActivity {
                 EmailLayout.setError(null);
             }
         });
+
         Password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -83,6 +88,8 @@ public class register extends AppCompatActivity {
                 PasswordLayout.setError(null);
             }
         });
+
+        // next button to switch to register details for first time
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,31 +116,20 @@ public class register extends AppCompatActivity {
                     PasswordLayout.setError("Password must be more than 8 characters");
                     return;
                 }
-                PerForAuth();
+                //need to change
+                //
+                 Intent intent = new Intent(register.this, RegisterDetails.class);
+                        intent.putExtra("Email",email);
+                        intent.putExtra("Password",password);
+                        startActivity( intent );
             }
         });
 
         }
 
-    private void PerForAuth() {
-        String email = Email.getText().toString();
-        String password = Password.getText().toString();
 
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
-                    SwitchToRegisterDetails();
-                }
-            }
-        });
-    }
 
-    private void SwitchToRegisterDetails() {
-        Intent intent = new Intent(register.this, RegisterDetails.class);
-        startActivity( intent );
-    }
+
     private void SwitchToLogin() {
         Intent intent = new Intent(register.this, LoginMain.class);
         startActivity( intent );

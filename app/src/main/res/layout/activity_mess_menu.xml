@@ -101,7 +101,7 @@
             android:layout_weight="1"
             android:scrollbars="horizontal" />
 
-        4<include
+        <include
             layout="@layout/event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -1,5 +1,7 @@
 package com.example.manageark.Model;
 
+import com.google.firebase.firestore.auth.User;
+
 public class UserModel {
     private String uid;
     private String fullName;
@@ -7,14 +9,28 @@ public class UserModel {
     private String uniqueId;
     private String university;
     private String photoUrl;
+    private String messID;
 
-    public UserModel(String uid, String fullName, String email, String uniqueId, String university, String photoUrl) {
+    public UserModel(){
+
+    }
+
+    public UserModel(String uid, String fullName, String email, String uniqueId, String university, String photoUrl,String messID) {
         this.uid = uid;
         this.fullName = fullName;
         this.email = email;
         this.uniqueId = uniqueId;
         this.university = university;
         this.photoUrl = photoUrl;
+        this.messID = messID;
+    }
+
+    public String getMessID() {
+        return messID;
+    }
+
+    public void setMessID(String messID) {
+        this.messID = messID;
     }
 
     public void setUID(String uid) { this.uid = uid; }
