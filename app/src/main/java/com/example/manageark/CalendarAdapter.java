@@ -40,6 +40,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
         return new CalendarViewHolder(view, onItemListener, days);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position)
     {
@@ -50,8 +51,13 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
         {
             holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
             holder.weekdayOfWeek.setText(String.valueOf(date.getDayOfWeek()).substring(0, 3));
-            if(date.equals(CalendarUtils.selectedDate))
-                holder.parentView.setBackgroundColor(Color.LTGRAY);
+            if(date.equals(CalendarUtils.selectedDate)){
+                holder.parentView.setBackgroundResource(R.drawable.selected_calender_item_background);
+
+                holder.dayOfMonth.setTextColor(Color.WHITE);
+                holder.weekdayOfWeek.setTextColor(Color.WHITE);
+            }
+
         }
     }
 

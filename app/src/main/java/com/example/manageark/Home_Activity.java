@@ -1,8 +1,8 @@
 package com.example.manageark;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.core.widget.NestedScrollView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,11 +13,12 @@ import android.view.View;
 import com.example.manageark.Model.UserModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.mlkit.vision.barcode.Barcode;
+import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -27,9 +28,9 @@ import java.util.Objects;
 public class Home_Activity extends AppCompatActivity {
 
     //temp array
-    int images[] = {R.drawable.one,R.drawable.two,R.drawable.three};
+    int images[] = {R.drawable.ngo_ad,R.drawable.ngo_ad,R.drawable.ngo_ad};
 
-//    FloatingActionButton QRscan;
+    ExtendedFloatingActionButton QRscan;
     CardView Mess_menu;
     SliderView sliderView;
 
@@ -47,7 +48,7 @@ public class Home_Activity extends AppCompatActivity {
 
         //Hooks
         sliderView = findViewById(R.id.imageSlider);
-//        QRscan = findViewById(R.id.QRscan);
+        QRscan = findViewById(R.id.QRscan);
         Mess_menu = (CardView) findViewById(R.id.icon_menu);
         getUserData();
         //Slider Adapter setup
@@ -64,7 +65,23 @@ public class Home_Activity extends AppCompatActivity {
 
 
 
+        //getting the toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.home_toolbar);
 
+        //setting the title
+        toolbar.setTitle("Home");
+
+        //placing toolbar in place of actionbar
+        setSupportActionBar(toolbar);
+
+        // Back button
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent  i = new Intent(Home_Activity.this,Profile_activity.class);
+                startActivity(i);
+            }
+        });
         Mess_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,12 +91,17 @@ public class Home_Activity extends AppCompatActivity {
             }
         });
 
-//        QRscan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+        QRscan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BarcodeScannerOptions options =
+                        new BarcodeScannerOptions.Builder()
+                                .setBarcodeFormats(
+                                        Barcode.FORMAT_QR_CODE,
+                                        Barcode.FORMAT_AZTEC)
+                                .build();
+            }
+        });
 
 
 

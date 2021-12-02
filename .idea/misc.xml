@@ -5,20 +5,27 @@
       <map>
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement.xml" value="0.103125" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/announcement_background.xml" value="0.1" />
+        <entry key="..\:/AndriodProject/app/src/main/res/drawable/calender_item_background.xml" value="0.1" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/dotted.xml" value="0.1" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/event.xml" value="0.13518518518518519" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/event_sub_background.xml" value="0.13518518518518519" />
+        <entry key="..\:/AndriodProject/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2" />
+        <entry key="..\:/AndriodProject/app/src/main/res/drawable/ic_help.xml" value="0.21770833333333334" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
         <entry key="..\:/AndriodProject/app/src/main/res/drawable/menu_home_background.xml" value="0.21770833333333334" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_login_main.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndriodProject/app/src/main/res/drawable/selected_calender_item_background.xml" value="0.1" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_login_main.xml" value="0.536" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_menu.xml" value="0.19739583333333333" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_mess_menu.xml" value="0.24173553719008264" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_mess_menu.xml" value="0.2" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_profile.xml" value="0.2873030583873957" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/activity_register_details.xml" value="0.2" />
-        <entry key="..\:/AndriodProject/app/src/main/res/layout/calendar_cell.xml" value="0.264" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/calendar_cell.xml" value="0.5272727272727272" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/event.xml" value="0.4" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/image_slider_layout_item.xml" value="0.1" />
+        <entry key="..\:/AndriodProject/app/src/main/res/layout/selected_calender_cell.xml" value="0.264" />
+        <entry key="..\:/AndriodProject/app/src/main/res/menu/help_toolbar.xml" value="0.536" />
       </map>
     </option>
   </component>
@@ -27,5 +34,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.536" />
+      </ProjectState>
+    </option>
   </component>
 </project>

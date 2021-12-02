@@ -25,7 +25,7 @@ public class CalendarUtils
 
     public static String monthYearFromDate(LocalDate date)
     {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM");
         return date.format(formatter);
     }
 

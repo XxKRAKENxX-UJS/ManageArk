@@ -6,16 +6,20 @@ import static com.example.manageark.CalendarUtils.selectedDate;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.example.manageark.Model.UserModel;
 import com.example.manageark.Model.WeekDayBoolModel;
@@ -42,7 +46,8 @@ import java.util.Calendar;
 
 public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnItemListener {
 
-    private TextView monthYearText;
+    private TextView CurrentDate;
+    private TextView day;
     private RecyclerView calendarRecyclerView;
     private final String TAG = "MAIN Activity";
 
@@ -87,6 +92,49 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         SettingAttend();
         WeekdayMenuFirebaseData();
         getDocumentPath();
+        //getting the toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.mess_toolbar);
+
+        //setting the title
+        toolbar.setTitle("Menu");
+
+        //placing toolbar in place of actionbar
+        setSupportActionBar(toolbar);
+
+        // Back button
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        CurrentDate.setText(LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM, dd")));
+        day.setText(LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE")));
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+       // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.help_toolbar,menu);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if(id == R.id.need_help){
+            Toast.makeText(Mess_menu.this, "Need Help Clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private String getDocumentPath() {
@@ -100,9 +148,9 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
     }
 
     private void initWidgets() {
+        day = findViewById(R.id.day);
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
-        monthYearText = findViewById(R.id.monthYearTV);
-
+        CurrentDate = findViewById(R.id.date);
 
         breakfast = findViewById(R.id.et_bt_item_special);
         b_time = findViewById(R.id.et_bt_t);
@@ -393,14 +441,15 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
 
     private void setWeekView()
     {
-        monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> days = daysInWeekArray(CalendarUtils.selectedDate);
 
         CalendarAdapter calendarAdapter = new CalendarAdapter(days, this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 5);
         calendarRecyclerView.setLayoutManager(layoutManager);
-        layoutManager.smoothScrollToPosition(calendarRecyclerView, null, 0);
+
         calendarRecyclerView.setAdapter(calendarAdapter);
+
+
     }
 
     public void previousWeekAction(View view)
@@ -426,8 +475,10 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         CalendarUtils.selectedDate = date;
         setWeekView();
 
-        SelectedDate = date;
 
+        SelectedDate = date;
+        CurrentDate.setText(SelectedDate.format(DateTimeFormatter.ofPattern("MMMM, dd")));
+        day.setText(SelectedDate.format(DateTimeFormatter.ofPattern("EEEE")));
         WeekdayMenuFirebaseData();
         SettingAttend();
     }
