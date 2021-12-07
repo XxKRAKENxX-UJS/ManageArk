@@ -26,6 +26,12 @@
         <entry key="..\:/AndriodProject/app/src/main/res/layout/image_slider_layout_item.xml" value="0.1" />
         <entry key="..\:/AndriodProject/app/src/main/res/layout/selected_calender_cell.xml" value="0.264" />
         <entry key="..\:/AndriodProject/app/src/main/res/menu/help_toolbar.xml" value="0.536" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/activity_home.xml" value="0.2957427536231884" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/activity_login_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/activity_mess_menu.xml" value="0.2957427536231884" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/calendar_cell.xml" value="0.2957427536231884" />
+        <entry key="..\:/ManageArk/app/src/main/res/layout/event.xml" value="0.2957427536231884" />
       </map>
     </option>
   </component>
