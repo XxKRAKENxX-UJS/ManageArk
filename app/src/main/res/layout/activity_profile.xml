@@ -13,7 +13,6 @@
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
         app:navigationIcon="?attr/homeAsUpIndicator">
-
     </androidx.appcompat.widget.Toolbar>
     <View
         android:layout_width="match_parent"
@@ -22,29 +21,168 @@
 
     </View>
 
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="100dp"
-        android:layout_height="100dp">
-    </View>
+<LinearLayout
 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <com.joooonho.SelectableRoundedImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/userphoto"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ngo"
+        app:sriv_border_color="#FFCC00"
+        app:sriv_border_width="2dp"
+        app:sriv_oval="true" />
     <LinearLayout
-        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/user_name"
+            android:text="Dipendra Naresh Sharma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student | Hostel 1">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal Details">
+    </TextView>
+
+    <ImageView
+        android:layout_marginStart="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:src="@drawable/dotted"
+        android:layerType="software"
+        android:layout_gravity="center">
+
+    </ImageView>
+</LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_email_TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="wrap_content"
+        android:hint="User Email"
+        android:layout_marginTop= "20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:clickable="false"
+            android:id="@+id/user_email_EditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu">
-        </ImageView>
+            android:inputType="text"
+            android:maxLines="1" />
 
-        <TextView
-            android:layout_width="wrap_content"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_roll_no_TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Roll number"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:clickable="false"
+            android:id="@+id/user_roll_no_EditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text= "">
+            android:inputType="text"
+            android:maxLines="1" />
 
-        </TextView>
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_university_TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User university"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:clickable="false"
+            android:id="@+id/user_university_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_mess_id_TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Mess Id"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:clickable="false"
+            android:id="@+id/user_mess_id_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+
+    </Button>
+
+    <Button
+        android:id="@+id/change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change password"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+    </Button>
+
+
+
+
+
+
+
+
+
+
 </LinearLayout>

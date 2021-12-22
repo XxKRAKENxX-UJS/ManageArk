@@ -2,9 +2,9 @@ package com.example.manageark;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.example.manageark.Model.UserModel;
+import com.example.manageark.Model.WeekdayMessMenuModel;
 
 
 public class SharedPrefManager {
@@ -14,8 +14,7 @@ public class SharedPrefManager {
     private SharedPreferences.Editor editor;
 
     public SharedPrefManager(Context context) {
-        this.context = context;
-    }
+        this.context = context; }
 
     public void saveUser(UserModel user){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
@@ -28,14 +27,39 @@ public class SharedPrefManager {
         editor.putString("user_photoUrl",user.getPhotoUrl());
         editor.putString("user_uniqueID",user.getUniqueId());
         editor.putBoolean("user_logged",true);
-
-
         editor.apply();
-
 
     }
 
+    public void saveTime(WeekdayMessMenuModel time){
+        sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        editor.putString("b_time_start",time.getB_time_start());
+        editor.putString("d_time_start",time.getD_time_start());
+        editor.putString("s_time_start",time.getS_time_start());
+        editor.putString("l_time_start",time.getL_time_start());
+        editor.putString("b_time_end",time.getB_time_end());
+        editor.putString("d_time_end",time.getD_time_end());
+        editor.putString("l_time_end",time.getL_time_end());
+        editor.putString("s_time_end",time.getS_time_end());
+        editor.apply();
 
+    }
+
+    public WeekdayMessMenuModel gettime(){
+        sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return new WeekdayMessMenuModel(
+                sharedPreferences.getString("b_time_start",null),
+                sharedPreferences.getString("d_time_start",null),
+                sharedPreferences.getString("s_time_start",null),
+                sharedPreferences.getString("l_time_start",null),
+                sharedPreferences.getString("b_time_end",null),
+                sharedPreferences.getString("d_time_end",null),
+                sharedPreferences.getString("l_time_end",null),
+                sharedPreferences.getString("s_time_end",null)
+
+        );
+    }
 
 
     public boolean isLoggedIn(){

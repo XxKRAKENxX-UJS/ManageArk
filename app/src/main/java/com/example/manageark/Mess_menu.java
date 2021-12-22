@@ -1,8 +1,7 @@
 package com.example.manageark;
 
 import static com.example.manageark.CalendarUtils.daysInWeekArray;
-import static com.example.manageark.CalendarUtils.monthYearFromDate;
-import static com.example.manageark.CalendarUtils.selectedDate;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.manageark.Model.UserModel;
 import com.example.manageark.Model.WeekDayBoolModel;
 import com.example.manageark.Model.WeekdayMessMenuModel;
 import com.github.angads25.toggle.LabeledSwitch;
@@ -30,17 +28,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
+
+
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firestore.v1.WriteResult;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 
 
 
@@ -49,7 +47,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
     private TextView CurrentDate;
     private TextView day;
     private RecyclerView calendarRecyclerView;
-    private final String TAG = "MAIN Activity";
+
 
     private TextView breakfast;
     private TextView b_time;
@@ -93,7 +91,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
         WeekdayMenuFirebaseData();
         getDocumentPath();
         //getting the toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.mess_toolbar);
+        Toolbar toolbar = findViewById(R.id.mess_toolbar);
 
         //setting the title
         toolbar.setTitle("Menu");
@@ -138,7 +136,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
     }
 
     private String getDocumentPath() {
-        FirebaseAuth auth = FirebaseAuth.getInstance();
+
 
         String uID = sharedPrefManager.getUser().getUID();
         String date = SelectedDate.format(DateTimeFormatter.ofPattern("dd_MM_yyyy"));
@@ -193,6 +191,7 @@ public class Mess_menu extends AppCompatActivity implements CalendarAdapter.OnIt
                 if ( documentSnapshot.exists() ) {
                     WeekdayMessMenuModel MessMenu = documentSnapshot.toObject(WeekdayMessMenuModel.class);
                     EventMenu.setVisibility(View.VISIBLE);
+
 
                     breakfast.setText(MessMenu.getBreakfast());
                     b_time.setText(MessMenu.getB_time());

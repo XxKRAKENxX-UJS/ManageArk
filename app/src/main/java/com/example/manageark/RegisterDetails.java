@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.manageark.Model.UserModel;
-import com.example.manageark.firebaseAuthUtil.userUtilsAuth;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,7 +67,6 @@ public class RegisterDetails extends AppCompatActivity {
 
 
 
-        userUtilsAuth auth = new userUtilsAuth();
 
 
 

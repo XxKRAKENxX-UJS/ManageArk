@@ -3,6 +3,16 @@ package com.example.manageark.Model;
 import com.google.firebase.firestore.ServerTimestamp;
 
 public class WeekdayMessMenuModel {
+    String b_time_start;
+    String d_time_start;
+    String l_time_start;
+    String s_time_start;
+
+    String l_time_end;
+    String b_time_end;
+    String d_time_end;
+    String s_time_end;
+
 
     String breakfast;
     String b_time;
@@ -21,7 +31,26 @@ public class WeekdayMessMenuModel {
 
     }
 
-    public WeekdayMessMenuModel(String breakfast, String b_time, String b_regular, String lunch, String l_time, String l_regular, String snacks, String s_time, String s_regular, String dinner, String d_time, String d_regular) {
+    public WeekdayMessMenuModel(String b_time_start, String d_time_start, String l_time_start, String s_time_start, String l_time_end, String b_time_end, String d_time_end, String s_time_end) {
+        this.b_time_start = b_time_start;
+        this.d_time_start = d_time_start;
+        this.l_time_start = l_time_start;
+        this.s_time_start = s_time_start;
+        this.l_time_end = l_time_end;
+        this.b_time_end = b_time_end;
+        this.d_time_end = d_time_end;
+        this.s_time_end = s_time_end;
+    }
+
+    public WeekdayMessMenuModel(String b_time_start, String d_time_start, String l_time_start, String s_time_start, String l_time_end, String b_time_end, String d_time_end, String s_time_end, String breakfast, String b_time, String b_regular, String lunch, String l_time, String l_regular, String snacks, String s_time, String s_regular, String dinner, String d_time, String d_regular) {
+        this.b_time_start = b_time_start;
+        this.d_time_start = d_time_start;
+        this.l_time_start = l_time_start;
+        this.s_time_start = s_time_start;
+        this.l_time_end = l_time_end;
+        this.b_time_end = b_time_end;
+        this.d_time_end = d_time_end;
+        this.s_time_end = s_time_end;
         this.breakfast = breakfast;
         this.b_time = b_time;
         this.b_regular = b_regular;
@@ -34,6 +63,70 @@ public class WeekdayMessMenuModel {
         this.dinner = dinner;
         this.d_time = d_time;
         this.d_regular = d_regular;
+    }
+
+    public String getB_time_start() {
+        return b_time_start;
+    }
+
+    public void setB_time_start(String b_time_start) {
+        this.b_time_start = b_time_start;
+    }
+
+    public String getD_time_start() {
+        return d_time_start;
+    }
+
+    public void setD_time_start(String d_time_start) {
+        this.d_time_start = d_time_start;
+    }
+
+    public String getL_time_start() {
+        return l_time_start;
+    }
+
+    public void setL_time_start(String l_time_start) {
+        this.l_time_start = l_time_start;
+    }
+
+    public String getS_time_start() {
+        return s_time_start;
+    }
+
+    public void setS_time_start(String s_time_start) {
+        this.s_time_start = s_time_start;
+    }
+
+    public String getL_time_end() {
+        return l_time_end;
+    }
+
+    public void setL_time_end(String l_time_end) {
+        this.l_time_end = l_time_end;
+    }
+
+    public String getB_time_end() {
+        return b_time_end;
+    }
+
+    public void setB_time_end(String b_time_end) {
+        this.b_time_end = b_time_end;
+    }
+
+    public String getD_time_end() {
+        return d_time_end;
+    }
+
+    public void setD_time_end(String d_time_end) {
+        this.d_time_end = d_time_end;
+    }
+
+    public String getS_time_end() {
+        return s_time_end;
+    }
+
+    public void setS_time_end(String s_time_end) {
+        this.s_time_end = s_time_end;
     }
 
     public String getBreakfast() {

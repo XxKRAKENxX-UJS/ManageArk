@@ -41,15 +41,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.github.angads25:toggle:1.0.0'
-    implementation 'com.google.firebase:firebase-database:20.0.2'
+    implementation 'com.google.firebase:firebase-database:20.0.3'
 
 
 
-    implementation 'com.google.mlkit:barcode-scanning:17.0.0'
+    implementation 'com.google.mlkit:barcode-scanning:17.0.1'
 
-
-
-
+    implementation 'com.joooonho:selectableroundedimageview:1.0.1'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.karumi:dexter:6.2.2'
 
 
 
