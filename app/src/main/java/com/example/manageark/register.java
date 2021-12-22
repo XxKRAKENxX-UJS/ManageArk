@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.manageark.firebaseAuthUtil.userUtilsAuth;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,8 +26,6 @@ public class register extends AppCompatActivity {
     TextInputLayout EmailLayout,PasswordLayout;
     Button next;
 
-    //object of firebaseAuthUtil
-    userUtilsAuth auth = new userUtilsAuth();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

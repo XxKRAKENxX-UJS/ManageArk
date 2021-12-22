@@ -4,31 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.manageark.ENUMS.Status;
-import com.example.manageark.Model.firebaseMessage;
-import com.example.manageark.firebaseAuthUtil.userUtilsAuth;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.w3c.dom.Text;
 
 public class LoginMain extends AppCompatActivity {
     TextView Email,Password,Signup;
@@ -133,16 +122,14 @@ public class LoginMain extends AppCompatActivity {
     private FirebaseAuth auth = FirebaseAuth.getInstance();
 
     private void Login(String email, String password) {
-        firebaseMessage[] message = {
-                new firebaseMessage(com.example.manageark.ENUMS.Status.Unsuccessful, "Something went wrong")
-        };
+
 
         System.out.println(email + "\t " + password);
         auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        message[0] = new firebaseMessage(Status.Successful, "Logged in.", "Logged in successfully");
+
                         if (authResult.getUser() != null) {
                             Intent intent = new Intent(LoginMain.this,Home_Activity.class);
                             startActivity(intent);
@@ -154,7 +141,7 @@ public class LoginMain extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        message[0] = new firebaseMessage(Status.Unsuccessful, "Something went wrong.", "Error while login.");
+                        Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
                     }
                 });
 
